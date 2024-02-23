@@ -11,9 +11,9 @@
 					<div class="row d-flex align-items-center justify-content-center">
 						<div class="about-content col-lg-12">
 							<h1 class="text-white">
-								Blog Details Page				
+								{{post.title}}				
 							</h1>	
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="blog-home.html">Blog </a> <span class="lnr lnr-arrow-right"></span> <a href="blog-single.html"> Blog Details Page</a></p>
+							<p class="text-white link-nav"><a href="{% url 'website:index' %}">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="{% url 'blog:index' %}">Blog </a> <span class="lnr lnr-arrow-right"></span> {{post.title}}</p>
 						</div>	
 					</div>
 				</div>
@@ -28,7 +28,7 @@
 							<div class="single-post row">
 								<div class="col-lg-12">
 									<div class="feature-img">
-										<img class="img-fluid" src="img/blog/feature-img1.jpg" alt="">
+										<img class="img-fluid" src="{% static 'img/blog/feature-img1.jpg' %}" alt="">
 									</div>									
 								</div>
 								<div class="col-lg-3  col-md-3 meta-details">
@@ -52,44 +52,19 @@
 									</div>
 								</div>
 								<div class="col-lg-9 col-md-9">
-									<h3 class="mt-20 mb-20">Astronomy Binoculars A Great Alternative</h3>
+									<h3 class="mt-20 mb-20">{{post.title}}</h3>
 									<p class="excert">
-										MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
+										{{post.content}}
 									</p>
-									<p>
-										Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed
-									</p>
-									<p>
-										Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed
-									</p>
+									
 								</div>
-								<div class="col-lg-12">
-									<div class="quotes">
-										MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training.										
-									</div>
-									<div class="row mt-30 mb-30">
-										<div class="col-6">
-											<img class="img-fluid" src="img/blog/post-img1.jpg" alt="">
-										</div>
-										<div class="col-6">
-											<img class="img-fluid" src="img/blog/post-img2.jpg" alt="">
-										</div>	
-										<div class="col-lg-12 mt-30">
-											<p>
-												MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower.
-											</p>
-											<p>
-												MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower.
-											</p>											
-										</div>									
-									</div>
-								</div>
+							
 							</div>
 							<div class="navigation-area">
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
 										<div class="thumb">
-											<a href="#"><img class="img-fluid" src="img/blog/prev.jpg" alt=""></a>
+											<a href="#"><img class="img-fluid" src="{% static 'img/blog/prev.jpg' %}" alt=""></a>
 										</div>
 										<div class="arrow">
 											<a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
@@ -108,7 +83,7 @@
 											<a href="#"><span class="lnr text-white lnr-arrow-right"></span></a>
 										</div>
 										<div class="thumb">
-											<a href="#"><img class="img-fluid" src="img/blog/next.jpg" alt=""></a>
+											<a href="#"><img class="img-fluid" src="{% static 'img/blog/next.jpg' %}" alt=""></a>
 										</div>										
 									</div>									
 								</div>
@@ -119,7 +94,7 @@
                                     <div class="single-comment justify-content-between d-flex">
                                         <div class="user justify-content-between d-flex">
                                             <div class="thumb">
-                                                <img src="img/blog/c1.jpg" alt="">
+                                                <img src="{% static 'img/blog/c1.jpg' %}" alt="">
                                             </div>
                                             <div class="desc">
                                                 <h5><a href="#">Emilly Blunt</a></h5>
@@ -138,7 +113,7 @@
                                     <div class="single-comment justify-content-between d-flex">
                                         <div class="user justify-content-between d-flex">
                                             <div class="thumb">
-                                                <img src="img/blog/c2.jpg" alt="">
+                                                <img src="{% static 'img/blog/c2.jpg' %}" alt="">
                                             </div>
                                             <div class="desc">
                                                 <h5><a href="#">Elsie Cunningham</a></h5>
@@ -157,7 +132,7 @@
                                     <div class="single-comment justify-content-between d-flex">
                                         <div class="user justify-content-between d-flex">
                                             <div class="thumb">
-                                                <img src="img/blog/c3.jpg" alt="">
+                                                <img src="{% static 'img/blog/c3.jpg' %}" alt="">
                                             </div>
                                             <div class="desc">
                                                 <h5><a href="#">Annie Stephens</a></h5>
@@ -176,7 +151,7 @@
                                     <div class="single-comment justify-content-between d-flex">
                                         <div class="user justify-content-between d-flex">
                                             <div class="thumb">
-                                                <img src="img/blog/c4.jpg" alt="">
+                                                <img src="{% static 'img/blog/c4.jpg' %}" alt="">
                                             </div>
                                             <div class="desc">
                                                 <h5><a href="#">Maria Luna</a></h5>
@@ -195,7 +170,7 @@
                                     <div class="single-comment justify-content-between d-flex">
                                         <div class="user justify-content-between d-flex">
                                             <div class="thumb">
-                                                <img src="img/blog/c5.jpg" alt="">
+                                                <img src="{% static 'img/blog/c5.jpg' %}" alt="">
                                             </div>
                                             <div class="desc">
                                                 <h5><a href="#">Ina Hayes</a></h5>
@@ -241,7 +216,7 @@
 			                        </form>
 								</div>
 								<div class="single-sidebar-widget user-info-widget">
-									<img src="img/blog/user-info.png" alt="">
+									<img src="{% static 'img/blog/user-info.png" alt="">
 									<a href="#"><h4>Charlie Barber</h4></a>
 									<p>
 										Senior blog writer
@@ -261,7 +236,7 @@
 									<div class="popular-post-list">
 										<div class="single-post-list d-flex flex-row align-items-center">
 											<div class="thumb">
-												<img class="img-fluid" src="img/blog/pp1.jpg" alt="">
+												<img class="img-fluid" src="{% static 'img/blog/pp1.jpg' %}" alt="">
 											</div>
 											<div class="details">
 												<a href="blog-single.html"><h6>Space The Final Frontier</h6></a>
@@ -270,7 +245,7 @@
 										</div>
 										<div class="single-post-list d-flex flex-row align-items-center">
 											<div class="thumb">
-												<img class="img-fluid" src="img/blog/pp2.jpg" alt="">
+												<img class="img-fluid" src="{% static 'img/blog/pp2.jpg' %}" alt="">
 											</div>
 											<div class="details">
 												<a href="blog-single.html"><h6>The Amazing Hubble</h6></a>
@@ -279,7 +254,7 @@
 										</div>
 										<div class="single-post-list d-flex flex-row align-items-center">
 											<div class="thumb">
-												<img class="img-fluid" src="img/blog/pp3.jpg" alt="">
+												<img class="img-fluid" src="{% static 'img/blog/pp3.jpg' %}" alt="">
 											</div>
 											<div class="details">
 												<a href="blog-single.html"><h6>Astronomy Or Astrology</h6></a>
@@ -288,7 +263,7 @@
 										</div>
 										<div class="single-post-list d-flex flex-row align-items-center">
 											<div class="thumb">
-												<img class="img-fluid" src="img/blog/pp4.jpg" alt="">
+												<img class="img-fluid" src="{% static 'img/blog/pp4.jpg' %}" alt="">
 											</div>
 											<div class="details">
 												<a href="blog-single.html"><h6>Asteroids telescope</h6></a>
@@ -298,7 +273,7 @@
 									</div>
 								</div>
 								<div class="single-sidebar-widget ads-widget">
-									<a href="#"><img class="img-fluid" src="img/blog/ads-banner.jpg" alt=""></a>
+									<a href="#"><img class="img-fluid" src="{% static 'img/blog/ads-banner.jpg' %}" alt=""></a>
 								</div>
 								<div class="single-sidebar-widget post-category-widget">
 									<h4 class="category-title">Post Catgories</h4>
