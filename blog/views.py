@@ -33,3 +33,13 @@ def detail_post(request, pid):
     'posts': posts
   })
 
+
+
+def next_post(request, pid):
+  try:
+    next_post = Post.objects.get(id>pid)
+  except:
+    pass
+  return render(request, 'blog/blog-home.html',{
+    'post': next_post            
+  })  
