@@ -7,11 +7,7 @@
   </head>
   <body>
     <h1>test</h1>
-    {% posts as pt %}
-    {% for post in pt%}
-     <p> {{post.content|snippets:60}}</p>
-    {% endfor %}
-
+   {% popularposts %}
     
   </body>
 </html>
