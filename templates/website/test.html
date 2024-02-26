@@ -6,8 +6,19 @@
 
   </head>
   <body>
-    <h1>test</h1>
-   {% popularposts %}
-    
+    <form action="{% url 'website:test' %}" method="POST">
+      {% csrf_token %}
+      <label>name</label>
+      <input name="name" type="text">
+
+      <label>email</label>
+      <input name="email" type="text">
+
+      <label>subject</label>
+      <input name="subject" type="text">
+
+     
+      <button type="submit">submit</button>
+    </form>
   </body>
 </html>
