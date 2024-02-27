@@ -19,3 +19,6 @@ class Contact(models.Model):
 
 class news_letter(models.Model):
   email = models.EmailField()
+
+  def __str__(self):
+    return self.email
