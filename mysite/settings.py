@@ -49,6 +49,9 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
+ROBOTS_USE_HOST = False
+ROBOTS_USE_SITEMAP = False
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

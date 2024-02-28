@@ -34,6 +34,6 @@ class Post(models.Model):
     return self.content[:100] + '...'
   
   '''
-  def get_absilute_url(self):
+  def get_absolute_url(self):
     return reverse('blog:single', kwargs={'pid':self.id})
   '''
