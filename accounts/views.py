@@ -32,7 +32,8 @@ def signup_view(request):
 
 @login_required
 def logout_view(request):
-  logout(request)
-  return redirect('/')  
+  if request.user.is_authenticated:
+    logout(request)
+    return redirect('/')  
 
   return render(request,'accounts/login.html')
