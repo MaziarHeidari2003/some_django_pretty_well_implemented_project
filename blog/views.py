@@ -11,8 +11,11 @@ def blog_view(request):
   })
 
 
-def blog_single(request):
-  return render(request, 'blog/blog-single.html')
+def blog_single(request,pid):
+  post = get_object_or_404(Post,pk=pid)
+  return render(request, 'blog/blog-single.html', {
+    'post':post
+  })
 
 def test(request,pid):
   post = get_object_or_404(Post,pk=pid)
