@@ -17,8 +17,5 @@ def blog_single(request,pid):
     'post':post
   })
 
-def test(request,pid):
-  post = get_object_or_404(Post,pk=pid)
-  return render(request, 'blog/test.html', {
-    'post':post
-  })
+def test(request):
+  return render(request, 'blog/test.html')
