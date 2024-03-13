@@ -1,5 +1,6 @@
 	{% extends 'base.html' %}
 	{% load static %}
+	{% load blog-tags %}
 
 	{% block content %}
 
@@ -218,7 +219,7 @@
 								</div>
 								
 								{% include 'blog/blog-writer.html' %}
-								{% include 'blog/popular-post.html' %}
+								{% popularposts %}
 								{% include 'blog/ads.html' %}
 					
 								<div class="single-sidebar-widget post-category-widget">
