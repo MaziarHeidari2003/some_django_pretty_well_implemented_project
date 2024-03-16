@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: robots
+Version: 0.1.5
+Summary: A lightweight automation tool.
+Home-page: https://ahamega.com/support
+Author: leesoar
+Author-email: core@111.com
+License: MIT
+Keywords: robots,robot,human
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.3.0
+Description-Content-Type: text/markdown
+Requires-Dist: lxml
+
+
+# Robots
+A lightweight automation tool.
+
+
+## How to use
+### Android Bot
+* Initialize the robot and connect the device:
+```python
+from robots import AndroidBot
+
+robot = AndroidBot("device_serial_number")
+```
+
+* Open a page(activity) within the app:
+```python
+robot.open("app_url_scheme")
+```
+
+* Extract UI rendered content using xpath:
+```python
+robot.xpath("xpath_expression")
+```
+
+
