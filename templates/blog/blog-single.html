@@ -100,10 +100,19 @@
 				</div>
 			</div>
 
+			
 
 
+<form method="post" action="{% url 'blog:single' pid=post.id %}">
+	{% csrf_token %}
+	<input name="subject">
+	<input name="name">
+	<input name="message">
+	<input name="email" type="email">
+	<input type="hidden" value="{{post.id}}">
+	<button type="submit">submit</button>
 
-
+</form>
 
 			<div class="comments-area">
 				<h4>{{comments|length}} Comments</h4>

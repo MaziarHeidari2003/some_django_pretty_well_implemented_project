@@ -46,5 +46,5 @@ class Comments(models.Model):
   update_date = models.DateTimeField(auto_now=True)
   message = models.TextField()
   subject = models.CharField(max_length=255)
-  approve = models.BooleanField()
+  approve = models.BooleanField(default=True)
   email = models.EmailField()
