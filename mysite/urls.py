@@ -38,7 +38,8 @@ urlpatterns = [
     {"sitemaps": sitemaps},
     name="django.contrib.sitemaps.views.sitemap"),
     path('robots.txt', include('robots.urls')),
-    path('accounts/', include('accounts.urls'))
+    path('accounts/', include('accounts.urls')),
+    path('captch/', include('captcha.urls'))
 
 ]
 

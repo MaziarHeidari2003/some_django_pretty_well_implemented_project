@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'multi_captcha_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
+    'captcha',
     'blog',
     'django.contrib.humanize',
     'django_extensions',
@@ -54,6 +56,10 @@ ROBOTS_USE_HOST = False
 ROBOTS_USE_SITEMAP = False
 
 SITE_ID = 2
+
+MULTI_CAPTCHA_ADMIN = {
+  'engine':'simple-captcha'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

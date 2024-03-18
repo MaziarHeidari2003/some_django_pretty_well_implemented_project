@@ -1,96 +1,111 @@
-	{% extends 'base.html' %}
-	{% load static %}
-	{% load blog-tags %}
+{% extends 'base.html' %}
+{% load static %}
+{% load blog-tags %}
 
-	{% block content %}
+{% block content %}
 
-			<!-- start banner Area -->
-			<section class="relative about-banner">	
-				<div class="overlay overlay-bg"></div>
-				<div class="container">				
-					<div class="row d-flex align-items-center justify-content-center">
-						<div class="about-content col-lg-12">
-							<h1 class="text-white">
-								{{post.title}}				
-							</h1>	
-							<p class="text-white link-nav"><a href="{% url 'website:index' %}">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="{% url 'blog:index' %}">Blog </a> <span class="lnr lnr-arrow-right"></span>{{post.title}}</p>
-						</div>	
+<!-- start banner Area -->
+<section class="relative about-banner">
+	<div class="overlay overlay-bg"></div>
+	<div class="container">
+		<div class="row d-flex align-items-center justify-content-center">
+			<div class="about-content col-lg-12">
+				<h1 class="text-white">
+					{{post.title}}
+				</h1>
+				<p class="text-white link-nav"><a href="{% url 'website:index' %}">Home </a> <span
+						class="lnr lnr-arrow-right"></span><a href="{% url 'blog:index' %}">Blog </a> <span
+						class="lnr lnr-arrow-right"></span>{{post.title}}</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End banner Area -->
+
+<!-- Start post-content Area -->
+<section class="post-content-area single-post-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 posts-list">
+				<div class="single-post row">
+					<div class="col-lg-12">
+						<div class="feature-img">
+							<img class="img-fluid" src="{% static 'img/blog/feature-img1.jpg' %}" alt="">
+						</div>
+					</div>
+					<div class="col-lg-3  col-md-3 meta-details">
+						<ul class="tags">
+							<li><a href="#">Food,</a></li>
+							<li><a href="#">Technology,</a></li>
+							<li><a href="#">Politics,</a></li>
+							<li><a href="#">Lifestyle</a></li>
+						</ul>
+						<div class="user-details row">
+							<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Mark wiens</a> <span
+									class="lnr lnr-user"></span></p>
+							<p class="date col-lg-12 col-md-12 col-6"><a href="#">{{post.published_date|date:"D d M Y"}}</a> <span
+									class="lnr lnr-calendar-full"></span></p>
+							<p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span class="lnr lnr-eye"></span></p>
+							<p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span
+									class="lnr lnr-bubble"></span></p>
+							<ul class="social-links col-lg-12 col-md-12 col-6">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-github"></i></a></li>
+								<li><a href="#"><i class="fa fa-behance"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-9 col-md-9">
+						<h3 class="mt-20 mb-20">{{post.title}}</h3>
+						<p class="excert">
+							{{post.content}}
+						</p>
+
+					</div>
+
+
+				</div>
+			</div>
+			<div class="navigation-area">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+						<div class="thumb">
+							<a href="#"><img class="img-fluid" src="{% static 'img/blog/prev.jpg' %}" alt=""></a>
+						</div>
+						<div class="arrow">
+							<a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
+						</div>
+						<div class="detials">
+							<p>Prev Post</p>
+							<a href="#">
+								<h4>Space The Final Frontier</h4>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+						<div class="detials">
+							<p>Next Post</p>
+							<a href="#">
+								<h4>Telescopes 101</h4>
+							</a>
+						</div>
+						<div class="arrow">
+							<a href="#"><span class="lnr text-white lnr-arrow-right"></span></a>
+						</div>
+						<div class="thumb">
+							<a href="#"><img class="img-fluid" src="{% static 'img/blog/next.jpg' %}" alt=""></a>
+						</div>
 					</div>
 				</div>
-			</section>
-			<!-- End banner Area -->					  
-			
-			<!-- Start post-content Area -->
-			<section class="post-content-area single-post-area">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 posts-list">
-							<div class="single-post row">
-								<div class="col-lg-12">
-									<div class="feature-img">
-										<img class="img-fluid" src="{% static 'img/blog/feature-img1.jpg' %}" alt="">
-									</div>									
-								</div>
-								<div class="col-lg-3  col-md-3 meta-details">
-									<ul class="tags">
-										<li><a href="#">Food,</a></li>
-										<li><a href="#">Technology,</a></li>
-										<li><a href="#">Politics,</a></li>
-										<li><a href="#">Lifestyle</a></li>
-									</ul>
-									<div class="user-details row">
-										<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Mark wiens</a> <span class="lnr lnr-user"></span></p>
-										<p class="date col-lg-12 col-md-12 col-6"><a href="#">{{post.published_date|date:"D d M Y"}}</a> <span class="lnr lnr-calendar-full"></span></p>
-										<p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span class="lnr lnr-eye"></span></p>
-										<p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span class="lnr lnr-bubble"></span></p>
-										<ul class="social-links col-lg-12 col-md-12 col-6">
-											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#"><i class="fa fa-github"></i></a></li>
-											<li><a href="#"><i class="fa fa-behance"></i></a></li>
-										</ul>																				
-									</div>
-								</div>
-								<div class="col-lg-9 col-md-9">
-									<h3 class="mt-20 mb-20">{{post.title}}</h3>
-									<p class="excert">
-										{{post.content}}
-									</p>
-								
-								</div>
-								
-							
-								</div>
-							</div>
-							<div class="navigation-area">
-								<div class="row">
-									<div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-										<div class="thumb">
-											<a href="#"><img class="img-fluid" src="{% static 'img/blog/prev.jpg' %}" alt=""></a>
-										</div>
-										<div class="arrow">
-											<a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
-										</div>
-										<div class="detials">
-											<p>Prev Post</p>
-											<a href="#"><h4>Space The Final Frontier</h4></a>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
-										<div class="detials">
-											<p>Next Post</p>
-											<a href="#"><h4>Telescopes 101</h4></a>
-										</div>
-										<div class="arrow">
-											<a href="#"><span class="lnr text-white lnr-arrow-right"></span></a>
-										</div>
-										<div class="thumb">
-											<a href="#"><img class="img-fluid" src="{% static 'img/blog/next.jpg' %}" alt=""></a>
-										</div>										
-									</div>									
-								</div>
-							</div>
-							<div class="comments-area">
+			</div>
+
+
+
+
+
+			<!--
+										<div class="comments-area">
 								<h4>05 Comments</h4>
 								<div class="comment-list">
                                     <div class="single-comment justify-content-between d-flex">
@@ -208,111 +223,149 @@
 									<a href="#" class="primary-btn text-uppercase">Post Comment</a>	
 								</form>
 							</div>
-						</div>
-						<div class="col-lg-4 sidebar-widgets">
-							<div class="widget-wrap">
-								<div class="single-sidebar-widget search-widget">
-									<form class="search-form" action="#">
-			                            <input placeholder="Search Posts" name="search" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'" >
-			                            <button type="submit"><i class="fa fa-search"></i></button>
-			                        </form>
+							-->
+
+		</div>
+
+		
+		<div class="comments-area">
+
+			<div id="disqus_thread"></div>
+			<script>
+				/**
+				*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+				*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+				/*
+				var disqus_config = function () {
+				this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+				this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				};
+				*/
+				(function () { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+					s.src = 'https://127-0-0-1-8000-cx2ew0dows.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+					Disqus.</a></noscript>
+		</div>
+
+
+
+
+
+
+
+
+
+		<div class="col-lg-4 sidebar-widgets">
+			<div class="widget-wrap">
+				<div class="single-sidebar-widget search-widget">
+					<form class="search-form" action="#">
+						<input placeholder="Search Posts" name="search" type="text" onfocus="this.placeholder = ''"
+							onblur="this.placeholder = 'Search Posts'">
+						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+
+				{% include 'blog/blog-writer.html' %}
+				{% popularposts %}
+				{% include 'blog/ads.html' %}
+
+				<div class="single-sidebar-widget post-category-widget">
+					<h4 class="category-title">Post Catgories</h4>
+					<ul class="cat-list">
+						<li>
+							<a href="#" class="d-flex justify-content-between">
+								<p>Technology</p>
+								<p>37</p>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="d-flex justify-content-between">
+								<p>Lifestyle</p>
+								<p>24</p>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="d-flex justify-content-between">
+								<p>Fashion</p>
+								<p>59</p>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="d-flex justify-content-between">
+								<p>Art</p>
+								<p>29</p>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="d-flex justify-content-between">
+								<p>Food</p>
+								<p>15</p>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="d-flex justify-content-between">
+								<p>Architecture</p>
+								<p>09</p>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="d-flex justify-content-between">
+								<p>Adventure</p>
+								<p>44</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="single-sidebar-widget newsletter-widget">
+					<h4 class="newsletter-title">Newsletter</h4>
+					<p>
+						Here, I focus on a range of items and features that we use in life without
+						giving them a second thought.
+					</p>
+					<div class="form-group d-flex flex-row">
+						<div class="col-autos">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i>
+									</div>
 								</div>
-								
-								{% include 'blog/blog-writer.html' %}
-								{% popularposts %}
-								{% include 'blog/ads.html' %}
-					
-								<div class="single-sidebar-widget post-category-widget">
-									<h4 class="category-title">Post Catgories</h4>
-									<ul class="cat-list">
-										<li>
-											<a href="#" class="d-flex justify-content-between">
-												<p>Technology</p>
-												<p>37</p>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="d-flex justify-content-between">
-												<p>Lifestyle</p>
-												<p>24</p>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="d-flex justify-content-between">
-												<p>Fashion</p>
-												<p>59</p>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="d-flex justify-content-between">
-												<p>Art</p>
-												<p>29</p>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="d-flex justify-content-between">
-												<p>Food</p>
-												<p>15</p>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="d-flex justify-content-between">
-												<p>Architecture</p>
-												<p>09</p>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="d-flex justify-content-between">
-												<p>Adventure</p>
-												<p>44</p>
-											</a>
-										</li>															
-									</ul>
-								</div>	
-								<div class="single-sidebar-widget newsletter-widget">
-									<h4 class="newsletter-title">Newsletter</h4>
-									<p>
-										Here, I focus on a range of items and features that we use in life without
-										giving them a second thought.
-									</p>
-									<div class="form-group d-flex flex-row">
-									   <div class="col-autos">
-									      <div class="input-group">
-									        <div class="input-group-prepend">
-									          <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i>
-											</div>
-									        </div>
-									        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'" >
-									      </div>
-									    </div>
-									    <a href="#" class="bbtns">Subcribe</a>
-									</div>	
-									<p class="text-bottom">
-										You can unsubscribe at any time
-									</p>								
-								</div>
-								<div class="single-sidebar-widget tag-cloud-widget">
-									<h4 class="tagcloud-title">Tag Clouds</h4>
-									<ul>
-										<li><a href="#">Technology</a></li>
-										<li><a href="#">Fashion</a></li>
-										<li><a href="#">Architecture</a></li>
-										<li><a href="#">Fashion</a></li>
-										<li><a href="#">Food</a></li>
-										<li><a href="#">Technology</a></li>
-										<li><a href="#">Lifestyle</a></li>
-										<li><a href="#">Art</a></li>
-										<li><a href="#">Adventure</a></li>
-										<li><a href="#">Food</a></li>
-										<li><a href="#">Lifestyle</a></li>
-										<li><a href="#">Adventure</a></li>
-									</ul>
-								</div>								
+								<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'">
 							</div>
 						</div>
+						<a href="#" class="bbtns">Subcribe</a>
 					</div>
-				</div>	
-			</section>
-			<!-- End post-content Area -->
-		
-			{% endblock %}
+					<p class="text-bottom">
+						You can unsubscribe at any time
+					</p>
+				</div>
+				<div class="single-sidebar-widget tag-cloud-widget">
+					<h4 class="tagcloud-title">Tag Clouds</h4>
+					<ul>
+						<li><a href="#">Technology</a></li>
+						<li><a href="#">Fashion</a></li>
+						<li><a href="#">Architecture</a></li>
+						<li><a href="#">Fashion</a></li>
+						<li><a href="#">Food</a></li>
+						<li><a href="#">Technology</a></li>
+						<li><a href="#">Lifestyle</a></li>
+						<li><a href="#">Art</a></li>
+						<li><a href="#">Adventure</a></li>
+						<li><a href="#">Food</a></li>
+						<li><a href="#">Lifestyle</a></li>
+						<li><a href="#">Adventure</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
+<!-- End post-content Area -->
+
+{% endblock %}
